@@ -1,0 +1,297 @@
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: linear-gradient(to bottom, #f0f0f0, #ffffff);
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Шапка */
+.header {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 20px 10%;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Кнопки */
+.btn {
+    padding: 10px 20px;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #0066cc;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #005bb5;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #0066cc;
+    border: 2px solid #0066cc;
+}
+
+.btn-secondary:hover {
+    background-color: #0066cc;
+    color: #fff;
+}
+
+.btn-large {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+}
+
+.auth-buttons a {
+    margin-left: 10px;
+}
+
+/* Основной контент */
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.main-content-notes {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.intro-section {
+    max-width: 800px;
+}
+
+.intro-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.intro-text {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #666;
+}
+
+/* Анимации */
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header, .navbar {
+    animation: fadeIn 1s ease-out;
+}
+
+.intro-title, .intro-text, .btn-large {
+    animation: slideIn 1.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Секция с формой */
+.form-section {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.form-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.form-group label {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #0066cc;
+    outline: none;
+}
+
+.form-text {
+    margin-top: 20px;
+    color: #666;
+}
+
+.form-text a {
+    color: #0066cc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.form-text a:hover {
+    color: #005bb5;
+}
+
+/* Стиль для чекбокса "Запомнить меня" */
+.form-group input[type="checkbox"] {
+    margin-right: 10px;
+    transform: scale(1.2);
+}
+
+/* Сетка для заметок */
+.notes-section {
+    padding: 20px 10%;
+}
+
+.notes-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.note-card {
+    
+    width: 394px;
+    height: 308px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.note-preview {
+    height: 200px;
+    background-color: #fff;
+    margin-bottom: 10px;
+}
+
+.note-info {
+    text-align: center;
+}
+
+.note-title {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.note-date {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.note-actions {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.note-actions .btn {
+    bottom: -30px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+.btn-empty {
+    background-color: #0066cc;
+    color: #fff;
+    padding: 5px;
+}
+
+.btn-delete {
+    background-color: #ff4d4d;
+    color: #fff;
+}
+
+.btn-delete:hover {
+    background-color: #ff3333;
+}
+
+/* Плюсик для добавления новой карточки */
+.add-note {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e0e0e0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-note:hover {
+    background-color: #d0d0d0;
+}
+
+.btn-add {
+    font-size: 2rem;
+    color: #999;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-add:hover {
+    color: #666;
+}
+

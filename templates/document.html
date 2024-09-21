@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Документ</title>
+    <link type='text/css' href="{{ url_for('static', filename='css/document.css') }}" rel="stylesheet" />
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">Органайзер</div>
+            <div class="doc-controls">
+                <button class="btn save-btn">Сохранить</button>
+                <button class="btn undo-btn">Отменить</button>
+                <button class="btn redo-btn">Повторить</button>
+                <a href="{{ url_for('notes') }}" class="btn logout-btn">Выйти</a>
+            </div>
+        </nav>
+    </header>
+    <main class="document-editor">
+        <section class="toolbar">
+            <button class="btn bold-btn">Ж</button>
+            <button class="btn italic-btn">К</button>
+            <button class="btn underline-btn">Ч</button>
+            <button class="btn num-list-btn">Нумерация</button>
+            <button class="btn bullet-list-btn">Маркировка</button>
+        </section>
+        <section class="document">
+            <div class="page">
+                <div class="content" contenteditable="true">
+                    <!-- Здесь можно редактировать текст -->
+                    Начните писать здесь...
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

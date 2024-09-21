@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Организация Заметок</title>
+    <link type='text/css' href="{{ url_for('static', filename='css/styles.css')}}" rel="stylesheet" />
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">Органайзер</div>
+            <div class="auth-buttons">
+                <a href="{{ url_for('login') }}" class="btn btn-primary">Войти</a>
+                <a href="{{ url_for('register') }}" class="btn btn-secondary">Регистрация</a>
+            </div>
+        </nav>
+    </header>
+    <main class="main-content">
+        <section class="intro-section">
+            <h1 class="intro-title">Легко организуйте свои задачи</h1>
+            <p class="intro-text">Наш инструмент поможет вам легко управлять своими заметками и всегда быть на высоте в выполнении дел.</p>
+            <a href="{{ url_for('login') }}" class="btn btn-primary btn-large">Начать сейчас</a>
+        </section>
+    </main>
+</body>
+</html>

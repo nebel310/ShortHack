@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <link type='text/css' href="{{ url_for('static', filename='css/styles.css')}}" rel="stylesheet" />
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">Органайзер</div>
+            <div class="auth-buttons">
+                <a href="{{ url_for('login') }}" class="btn btn-primary">Войти</a>
+            </div>
+        </nav>
+    </header>
+    <main class="main-content">
+        <section class="form-section">
+            <h1 class="form-title">Регистрация</h1>
+            {% for cat, msg in get_flashed_messages(True) %}
+            <div class="flash {{cat}}">{{msg}}</div>
+            {% endfor %}
+            <form action="{{ url_for('register') }}" method="POST" class="form">
+                <div class="form-group">
+                    <label for="username">Имя пользователя</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Электронная почта</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Пароль</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirm_password">Повтор пароля</label>
+                    <input type="password" id="confirm_password" name="confirm_password" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-large">Зарегистрироваться</button>
+            </form>
+            <p class="form-text">Уже зарегистрированы? <a href="{{ url_for('login') }}">Войти</a></p>
+        </section>
+    </main>
+</body>
+</html>

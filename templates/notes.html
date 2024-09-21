@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мои Заметки</title>
+    <link type='text/css' href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" />
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">Органайзер</div>
+            <div class="auth-buttons">
+                <a href="{{ url_for('logout') }}" class="btn" style="color: black;"><b>ИИ</b></a>
+                <a href="{{ url_for('logout') }}" class="btn" style="color: black;"><b>Магазин</b></a>
+                <a href="{{ url_for('notes') }}" class="btn" style="color: black;"><b>Мои заметки</b></a>
+                <a href="{{ url_for('logout') }}" class="btn btn-secondary">Выход</a>
+                <a href="{{ url_for('index') }}" class="btn btn-primary">На главную</a>
+            </div>
+        </nav>
+    </header>
+    <main class="main-content-notes">
+        <section class="notes-section">
+            <div class="notes-grid">
+                <!-- Начало карточек заметок -->
+                {% for note in notes %}
+                <div class="note-card">
+                    <div class="note-preview">
+                        <!-- Предпросмотр заметки (может быть сокращенный текст заметки или картинка) -->
+                        {{ note.preview }}
+                    </div>
+                    <div class="note-info">
+                        <h3 class="note-title">{{ note.title }}</h3>
+                        <p class="note-date">{{ note.date }}</p>
+                    </div>
+                    <div class="note-actions">
+                        <button class="btn btn-empty">Редактировать</button>
+                        <button class="btn btn-delete">Удалить</button>
+                    </div>
+                </div>
+                {% endfor %}
+                <!-- Плюсик для добавления новой карточки -->
+                <div class="note-card add-note">
+                    <button class="btn btn-add">+</button>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
